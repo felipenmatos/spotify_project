@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components"
+import logo from "../../assets/logo_spotify.png"
 
 const Login = () => {
 
     return (
         <Div>
             <Header>
-                <ImgLogo />
+                <ImgLogo src={logo} alt="Logo"/>
             </Header>
             <DivBody>
                 <FacebookButton>CONTINUAR COM O FACEBOOK</FacebookButton>
@@ -40,35 +41,80 @@ const Login = () => {
 }
 
 const Div = styled.div`
-
+    width: 100%;
+    height: 100vh 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;
 
 const Header = styled.div`
-
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #696969 ;
 `;
 
 const ImgLogo = styled.img`
-
+    width: 130px;
+    height: 40px;
 `;
 
 const DivBody = styled.div`
-
+    width: 500px;
+    height: 100vh 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 `;
 
 const FacebookButton = styled.button`
-
+    width: 400px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius:20px;
+    border: 0px;
+    color: #FFF;
+    background-color: #3B5998 ;
+    cursor: pointer;
 `;
 
 const AppleButton = styled.button`
-
+    width: 400px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius:20px;
+    border: 0px;
+    color: #FFF;
+    background-color: #000;
+    cursor: pointer;
 `;
 
 const GoogleButton = styled.button`
-
+    width: 400px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius:20px;
+    border: 1px solid #696969;
+    color: #696969;
+    background-color: #FFF;
+    cursor: pointer;
 `;
 
 const PhoneButton = styled.button`
-
+    width: 400px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius:20px;
+    border: 1px solid #696969;
+    color: #696969;
+    background-color: #FFF;
+    cursor: pointer;
 `;
 
 const DivStyle = styled.div`
@@ -84,7 +130,8 @@ const TextDecoration = styled.p`
 `;
 
 const Form = styled.form`
-
+    display: flex;
+    flex-direction: column;
 `;
 
 const Label = styled.label`
