@@ -1,6 +1,9 @@
 import React from "react";
-import styled from "styled-components"
-import logo from "../../assets/logo_spotify.png"
+import styled from "styled-components";
+import logo from "../../assets/logo_spotify.png";
+import facebook from "../../assets/facebook.svg";
+import google from "../../assets/google.png";
+import apple from "../../assets/apple.svg";
 
 const Login = () => {
 
@@ -10,14 +13,25 @@ const Login = () => {
                 <ImgLogo src={logo} alt="Logo"/>
             </Header>
             <DivBody>
-                <FacebookButton>CONTINUAR COM O FACEBOOK</FacebookButton>
-                <AppleButton>CONTINUAR COM A APPLE</AppleButton>
-                <GoogleButton>CONTINUAR COM O GOOGLE</GoogleButton>
-                <PhoneButton>CONTINUAR COM UM NÚMERO DE TELEFONE</PhoneButton>
+                <FacebookButton>
+                    <FacebookIcon src={facebook} alt="icone-facebook"/>
+                    CONTINUAR COM O FACEBOOK
+                </FacebookButton>
+                <AppleButton>
+                    <AppleIcon src={apple} alt="apple"/>
+                    CONTINUAR COM A APPLE
+                </AppleButton>
+                <GoogleButton>
+                    <GoogleIcon src={google} alt="icone-google"/>
+                    CONTINUAR COM O GOOGLE
+                </GoogleButton>
+                <PhoneButton>
+                    CONTINUAR COM UM NÚMERO DE TELEFONE
+                </PhoneButton>
                 <DivStyle>
-                    <DivLine></DivLine>
+                    <DivLineLeft></DivLineLeft>
                     <TextDecoration>OU</TextDecoration>
-                    <DivLine></DivLine>
+                    <DivLineRight></DivLineRight>
                 </DivStyle>
                 <Form>
                     <Label>Endereço de e-mail ou nome de usuário</Label>
@@ -31,10 +45,9 @@ const Login = () => {
                     </DivRemember>
                     <ButtonNext>Entrar</ButtonNext>
                 </Form>
-                <DivBaseboard>
-                    <LabelBaseboard>Não tem uma conta?</LabelBaseboard>
-                    <ButtonRegister></ButtonRegister>
-                </DivBaseboard>
+                <DivBaseboard></DivBaseboard>
+                <LabelBaseboard>Não tem uma conta?</LabelBaseboard>
+                <ButtonRegister>INSCREVER-SE NO SPOTIFY</ButtonRegister>
             </DivBody>
         </Div>
     )
@@ -76,6 +89,9 @@ const DivBody = styled.div`
 const FacebookButton = styled.button`
     width: 400px;
     height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 10px;
     border-radius:20px;
     border: 0px;
@@ -84,9 +100,18 @@ const FacebookButton = styled.button`
     cursor: pointer;
 `;
 
+const FacebookIcon = styled.img`
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+`;
+
 const AppleButton = styled.button`
     width: 400px;
     height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 10px;
     border-radius:20px;
     border: 0px;
@@ -95,15 +120,30 @@ const AppleButton = styled.button`
     cursor: pointer;
 `;
 
+const AppleIcon = styled.img`
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+`;
+
 const GoogleButton = styled.button`
     width: 400px;
     height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 10px;
     border-radius:20px;
     border: 1px solid #696969;
     color: #696969;
     background-color: #FFF;
     cursor: pointer;
+`;
+
+const GoogleIcon = styled.img`
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
 `;
 
 const PhoneButton = styled.button`
@@ -118,18 +158,30 @@ const PhoneButton = styled.button`
 `;
 
 const DivStyle = styled.div`
-
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 `;
 
-const DivLine = styled.div`
+const DivLineLeft = styled.div`
+    width: 180px;
+    border: 1px solid #696969;
+`;
 
+const DivLineRight = styled.div`
+    width: 180px;
+    border: 1px solid #696969;
 `;
 
 const TextDecoration = styled.p`
-
+    margin-top: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
 `;
 
 const Form = styled.form`
+    width: 80%;
     display: flex;
     flex-direction: column;
 `;
@@ -139,23 +191,30 @@ const Label = styled.label`
 `;
 
 const InputEmail = styled.input`
-
+    height: 30px;
+    margin-top: 10px;
+    padding: 5px 10px;
 `;
 
 const InputPassword = styled.input`
-
+    height: 30px;
+    margin-top: 10px;
+    padding: 5px 10px;
 `;
 
 const ForgotPassword = styled.label`
-
+    margin-top: 20px;
 `;
 
 const DivRemember = styled.div`
-
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
 `;
 
 const ButtonToRemember = styled.button`
-
+    margin-right: 20px;
+    cursor: pointer;
 `;
 
 const LabelPasswordRemember = styled.label`
@@ -163,19 +222,40 @@ const LabelPasswordRemember = styled.label`
 `;
 
 const ButtonNext = styled.button`
-
+    width: 100px;
+    height: 40px;
+    margin-top: -25px;
+    margin-left: 75%;
+    position: relative;
+    border-radius: 20px;
+    border: 0px;
+    background-color: #32cd32;
+    font-size: 18px;
 `;
 
 const DivBaseboard = styled.div`
-
+    width: 80%;
+    margin-top: 20px;
+    border: 1px solid #696969;
 `;
 
 const LabelBaseboard = styled.label`
-
+    margin-top: 20px;
+    font-size: 20px;
 `;
 
 const ButtonRegister = styled.button`
-
-`;
+    width: 400px;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #696969;
+    border: 1px solid #696969;
+    background-color: #FFF;
+    border-radius: 20px;
+`;  
 
 export default Login;
